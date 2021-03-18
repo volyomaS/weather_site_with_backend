@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Погода здесь</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="weather, city">
+	<meta name="description" content="get your weather here">
+	<meta name="author" content="Daniil Samoylov">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+	<link rel="stylesheet" href="static/css/main.css">
+	<link rel="icon" href="static/images/icon.png">
+	<script src="static/js/main.js"></script>
+</head>
+<body onload="main();">
+	<main>
+		<div class="weather_here">
+			<h1>Погода здесь</h1>
+		</div>
+		<div class="update_weather">
+			<button class="update_weather_button" onclick="start_geo();">
+				<img id="update_geo_img" src="static/images/upd.png"></img>
+				<div id="update_geo_text">Обновить геолокацию</div>
+			</button>
+		</div>
+		<div class="main_city">
+			<h2 class="main_city_name">Данные загружаются...</h2>
+		</div>
+		<div class="weather_image">
+			<img src="static/images/question_mark.png" width=100 height=100></img>
+		</div>
+		<div class="weather_temperature">
+			<span class="weather_temperature_main">???&#160;°C</span>
+		</div>
+		<ul class="weather_properties">
+			<li><span class="property">Ветер</span>??? m/s</li>
+			<li><span class="property">Облачность</span>???</li>
+			<li><span class="property">Давление</span>??? hpa</li>
+			<li><span class="property">Влажность</span>??? %</li>
+			<li><span class="property">Координаты</span>[???, ???]</li>
+		</ul> 
+		<div class="favorites">
+			<h2>Избранное</h2>
+		</div>
+		<div class="add_city">
+			<input id="input_city" class="input_city" placeholder="Добавить новый город"></input>
+			<button id="add_city_button" class="add_city_button" onclick="add_city(document.getElementById('input_city').value, false);document.getElementById('input_city').value = ''">+</button>
+		</div>
+		<ul class="another_cities">
+			<li id="fake_city" class="another_city">
+				<div class="another_city_header">
+					<div class="another_city_name">
+						<h3>???</h3>
+					</div>
+					<div class="another_city_temperature">
+						<span>???°C</span>
+					</div>
+					<div class="another_city_weather_image">
+						<img src="static/images/question_mark.png" width="50" height="50">
+					</div>
+					<div class="another_city_close_button">
+						<button class="close_button">X</button>
+					</div>
+				</div>
+				<ul class="another_city_properties">
+					<li><span class="property">Ветер</span>??? m/s</li>
+					<li><span class="property">Облачность</span>???</li>
+					<li><span class="property">Давление</span>??? hpa</li>
+					<li><span class="property">Влажность</span>??? %</li>
+					<li><span class="property">Координаты</span>[???, ???]</li>
+				</ul>
+			</li>
+		</ul>
+	</main>
+</body>
+</html>

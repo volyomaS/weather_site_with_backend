@@ -1,0 +1,438 @@
+body {
+	margin: 0;
+	padding-left: 15%;
+	padding-right: 15%;
+	font-family: "Bitter", serif;
+	font-size: 18px;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-template-areas:
+		"weather_here update_weather update_weather ."
+		"main_city main_city weather_properties weather_properties"
+		"weather_image weather_temperature weather_properties weather_properties"
+		"favorites favorites add_city add_city"
+		"another_cities another_cities another_cities another_cities";
+}
+
+.weather_here {
+	grid-area: weather_here;
+}
+
+.update_weather {
+	grid-area: update_weather;
+}
+
+.main_city {
+	grid-area: main_city;
+}
+
+.weather_properties {
+	grid-area: weather_properties;
+}
+
+.weather_image {
+	grid-area: weather_image;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.weather_temperature {
+	grid-area: weather_temperature;
+}
+
+.favorites {
+	grid-area: favorites;
+}
+
+.input_city {
+	background-color: #DCDCDC;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	width: 100%;
+}
+
+.add_city {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	grid-area: add_city;
+}
+
+.add_city_button {
+	margin-left: 15px;
+	padding-right: 13px;
+	padding-left: 13px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 24px;
+	color: white;
+	border: none;
+	background-color: gray;
+	border-radius: 50%;
+}
+
+.another_cities {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	grid-area: another_cities;
+}
+
+.another_city {
+	background-color: white;
+	color: black;
+	padding: 0;
+	width: 350px;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: auto;
+	grid-template-areas:
+		"another_city_header"
+		"another_city_properties";
+}
+
+.another_city_header {
+	display: flex;
+	justify-content: space-between;
+	grid-area: another_city_header
+}
+
+.another_city_name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	grid-area: another_city_name;
+	/*word-break: break-all;*/
+	/*overflow: visible;*/
+}
+/*
+.another_city_name:hover {
+	overflow: visible;
+}*/
+
+.another_city_temperature {
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-area: another_city_temperature;
+	font-size: 24px;
+	padding-left: 5%;
+}
+
+.another_city_weather_image {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	grid-area: another_city_weather_image;
+}
+
+.another_city_close_button {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	grid-area: another_city_close_button;
+}
+
+.another_city_properties {
+	grid-area: another_city_properties;
+}
+
+h1 {
+	font-size: 36px;
+	color: gray;
+}
+
+h2 {
+	font-size: 36px;
+	color: gray;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+.update_weather {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.update_weather_button {
+	display: flex;
+	justify-content: center;
+	background-color: #C0C0C0;
+	border: none;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 14px 40px;
+	width: 75%;
+	color: #696969;
+}
+
+.main_city_name {
+	margin: 0;
+	font-size: 34px;
+	color: black;
+}
+
+.weather_temperature_main {
+	font-weight: bold;
+	margin: 0;
+	font-size: 86px;
+}
+
+ul {
+	margin: 0;
+	list-style-type: none;
+	padding: 0px;
+}
+
+li {
+	display: flex;
+	justify-content: space-between;
+	background-color: gray;
+	padding: 2%;
+	margin-right: 0px;
+	margin-left: 0px; 
+	margin-bottom: 3%;
+	color: white;
+	font-size: 14px;
+}
+
+b {
+	color: white;
+}
+
+.close_button {
+	border-radius: 50%;
+	background-color: gray;
+	border: none;
+	font-size: 16px;
+	padding: 11px 15px;
+	color: white;
+}
+
+#update_geo_img {
+	width: 36px;
+	height: 36px;
+	display: none;
+}
+
+.property {
+	font-weight: bold;
+}
+
+#fake_city {
+	display: none;
+}
+
+@media only screen and (max-width: 1020px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"weather_here update_weather"
+			"main_city main_city"
+			"weather_image weather_temperature"
+			"weather_properties weather_properties"
+			"favorites ."
+			"add_city add_city"
+			"another_cities another_cities";
+	}
+	
+	.another_city {
+		width: 100%;
+	}
+	body {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	
+	#update_geo_text {
+		display: none;
+	}
+	
+	#update_geo_img {
+		display: block;
+	}
+	
+	.add_city {
+		justify-content: space-between;
+	}
+}
+
+@media only screen and (max-width: 505px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"weather_here update_weather"
+			"main_city main_city"
+			"weather_image weather_temperature"
+			"weather_properties weather_properties"
+			"favorites ."
+			"add_city add_city"
+			"another_cities another_cities";
+	}
+	
+	.another_city {
+		width: 100%;
+	}
+	body {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	
+	#update_geo_text {
+		display: none;
+	}
+	
+	#update_geo_img {
+		display: block;
+	}
+	
+	.add_city {
+		justify-content: space-between;
+	}
+	
+	.weather_temperature_main {
+		font-size: 64px;
+	}
+}
+
+@media only screen and (max-width: 433px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"weather_here update_weather"
+			"main_city main_city"
+			"weather_image weather_temperature"
+			"weather_properties weather_properties"
+			"favorites ."
+			"add_city add_city"
+			"another_cities another_cities";
+	}
+	
+	.another_city {
+		width: 100%;
+	}
+	body {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	
+	#update_geo_text {
+		display: none;
+	}
+	
+	#update_geo_img {
+		display: block;
+	}
+	
+	.add_city {
+		justify-content: space-between;
+	}
+	
+	.weather_temperature_main {
+		font-size: 56px;
+	}
+}
+
+@media only screen and (max-width: 390px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"weather_here update_weather"
+			"main_city main_city"
+			"weather_image weather_temperature"
+			"weather_properties weather_properties"
+			"favorites ."
+			"add_city add_city"
+			"another_cities another_cities";
+	}
+	
+	.another_city {
+		width: 100%;
+	}
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	#update_geo_text {
+		display: none;
+	}
+	
+	#update_geo_img {
+		display: block;
+	}
+	
+	.add_city {
+		justify-content: space-between;
+	}
+	
+	.weather_temperature_main {
+		font-size: 48px;
+	}
+}
+
+@media only screen and (max-width: 353px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+			"weather_here update_weather"
+			"main_city main_city"
+			"weather_image weather_temperature"
+			"weather_properties weather_properties"
+			"favorites ."
+			"add_city add_city"
+			"another_cities another_cities";
+	}
+	
+	.another_city {
+		width: 100%;
+	}
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	#update_geo_text {
+		display: none;
+	}
+	
+	#update_geo_img {
+		display: block;
+	}
+	
+	.add_city {
+		justify-content: space-between;
+	}
+	
+	.weather_temperature_main {
+		font-size: 36px;
+	}
+	
+	h3 {
+		font-size: 20px;
+	}
+	
+	.another_city_temperature {
+		font-size: 20px;
+	}
+}
