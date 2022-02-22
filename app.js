@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 var db = null;
 
-MongoClient.connect('mongodb://localhost:27017/', function(err, client) {
+MongoClient.connect('mongodb://mongo:27017/', function(err, client) {
     if (err) {
 		console.error(err);
 	}
