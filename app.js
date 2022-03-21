@@ -2,6 +2,8 @@ const express = require('express');
 const https = require('https');
 const MongoClient = require('mongodb').MongoClient;
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 const port = parseInt(process.env.PORT);
 console.log(`Got port ${port}!`);
 var db = null;
