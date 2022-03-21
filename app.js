@@ -2,7 +2,7 @@ const express = require('express');
 const https = require('https');
 const MongoClient = require('mongodb').MongoClient;
 const app = express();
-const port = 3000;
+const port = parseInt(process.env.PORT);
 var db = null;
 
 MongoClient.connect('mongodb://mongo:27017/', function(err, client) {
